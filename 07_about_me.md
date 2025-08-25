@@ -1,5 +1,4 @@
 
-
 # About Me
 
 * **Name:** Jocelyn Bendoy
