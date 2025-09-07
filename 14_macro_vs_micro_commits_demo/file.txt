@@ -1,1 +1,0 @@
-Micro commits make the history neat and easy to follow because each commit shows one clear change. Macro commits mix different changes in one commit, which makes it harder to track and fix problems.
