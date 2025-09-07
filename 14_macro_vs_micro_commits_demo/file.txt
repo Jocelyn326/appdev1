@@ -1,0 +1,1 @@
+With macro commits, all changes were mixed together, making history hard to follow. With micro commits, each change was separate and clearer, so it’s easier to track and debug

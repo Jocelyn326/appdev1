@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    
+  <button onclick="changeBackground()">Change Background</button>
+  
+  <p id="colorDisplay"></p>
+  <p id="timeoutMessage"></p>
+
+  <script>
+    function changeBackground() {
+     
+      let favColor = prompt("Enter your favorite color:");
+      
+      document.body.style.backgroundColor = favColor;
+
+      document.getElementById("colorDisplay").textContent =
+        "Your favorite color is: " + favColor;
+
+      setTimeout(() => {
+        document.getElementById("timeoutMessage").textContent =
+          "This message appears after 2 seconds";
+      }, 2000);
+    }
+  </script    
+</body>
+</html>

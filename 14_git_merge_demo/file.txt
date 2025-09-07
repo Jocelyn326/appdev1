@@ -1,0 +1,1 @@
+After merge, the history showed the two branches joined together with a merge commit. Unlike rebase, it kept the branch structure, so I can see exactly when the feature branch was combined with main.
