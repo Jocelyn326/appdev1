@@ -1,0 +1,1 @@
+After rebase, the history became clean and straight. My feature commits were placed on top of the updated main branch, making the timeline easier to read.
