@@ -1,0 +1,1 @@
+After rebase, the history was rewritten into a straight line, placing the feature commits neatly after the hotfix, as if the branch had never split in the first place.
