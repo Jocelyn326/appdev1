@@ -9,7 +9,15 @@ const user = {
   imageSize: 150,
 };
 
-function MyButton() {
+function MyButton({ count, onClick }) {
+  return (
+    <button onClick={onClick}>
+      Clicked {count} times
+    </button>
+  );
+}
+
+function CounterGroup() {
   const [count, setCount] = useState(0);
 
   function handleClick() {
@@ -17,9 +25,11 @@ function MyButton() {
   }
 
   return (
-    <button onClick={handleClick}>
-      Clicked {count} times
-    </button>
+    <div>
+      <h1>Counters that update together</h1>
+      <MyButton count={count} onClick={handleClick} />
+      <MyButton count={count} onClick={handleClick} />
+    </div>
   );
 }
 
@@ -64,7 +74,9 @@ export default function App() {
         <h1>Welcome to my app</h1>
       </header>
 
-      <MyButton />
+      {/* ✅ Counter section */}
+      <CounterGroup />
+
       <AboutPage />
 
       <section style={{ marginTop: 20 }}>
