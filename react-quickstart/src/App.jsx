@@ -22,6 +22,29 @@ function AboutPage() {
   );
 }
 
+const products = [
+  { title: 'Cabbage', isFruit: false, id: 1 },
+  { title: 'Garlic', isFruit: false, id: 2 },
+  { title: 'Apple', isFruit: true, id: 3 },
+];
+
+function ShoppingList() {
+  const listItems = products.map(product =>
+    <li
+      key={product.id}
+      style={{
+        color: product.isFruit ? 'magenta' : 'darkgreen'
+      }}
+    >
+      {product.title}
+    </li>
+  );
+
+  return (
+    <ul>{listItems}</ul>
+  );
+}
+
 export default function App() {
   const [showUser, setShowUser] = useState(true); 
 
@@ -34,35 +57,39 @@ export default function App() {
       <MyButton />
       <AboutPage />
 
+      <section style={{ marginTop: 20 }}>
+        <h2>Shopping List</h2>
+        <ShoppingList />
+      </section>
 
-<section style={{ marginTop: 20, textAlign: 'center' }}>
-  {showUser ? (
-    <>
-      <h1>{user.name}</h1>
-      <img
-        className="avatar"
-        src={user.imageUrl}
-        alt={'Photo of ' + user.name}
-        style={{
-          width: user.imageSize,
-          height: user.imageSize,
-          borderRadius: '20px',
-          display: 'block',
-          margin: '0 auto 12px'
-        }}
-      />
-    </>
-  ) : (
-    <p>User info is hidden.</p>
-  )}
+      <section style={{ marginTop: 20, textAlign: 'center' }}>
+        {showUser ? (
+          <>
+            <h1>{user.name}</h1>
+            <img
+              className="avatar"
+              src={user.imageUrl}
+              alt={'Photo of ' + user.name}
+              style={{
+                width: user.imageSize,
+                height: user.imageSize,
+                borderRadius: '20px',
+                display: 'block',
+                margin: '0 auto 12px'
+              }}
+            />
+          </>
+        ) : (
+          <p>User info is hidden.</p>
+        )}
 
-  <button
-    onClick={() => setShowUser(!showUser)}
-    style={{ marginTop: '10px', padding: '6px 12px', cursor: 'pointer' }}
-  >
-    Toggle User Info
-  </button>
-</section>
+        <button
+          onClick={() => setShowUser(!showUser)}
+          style={{ marginTop: '10px', padding: '6px 12px', cursor: 'pointer' }}
+        >
+          Toggle User Info
+        </button>
+      </section>
     </div>
   );
 }
