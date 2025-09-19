@@ -10,7 +10,15 @@ const user = {
 };
 
 function MyButton() {
-  return <button>I'm a Button</button>;
+  function handleClick() {
+    alert('You clicked me!');
+  }
+
+  return (
+    <button onClick={handleClick}>
+      Click me
+    </button>
+  );
 }
 
 function AboutPage() {
