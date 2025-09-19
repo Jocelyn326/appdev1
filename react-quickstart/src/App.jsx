@@ -9,15 +9,33 @@ const user = {
   imageSize: 150,
 };
 
+// ✅ Counter button
 function MyButton({ count, onClick }) {
   return (
-    <button onClick={onClick}>
+    <button onClick={onClick} style={{ margin: '0 10px' }}>
       Clicked {count} times
     </button>
   );
 }
 
-function CounterGroup() {
+// ✅ Alert button (separate, centered)
+function AlertButton() {
+  function handleClick() {
+    alert('You clicked the alert button!');
+  }
+
+  return (
+    <button 
+      onClick={handleClick} 
+      style={{ marginTop: '12px', padding: '6px 12px', cursor: 'pointer' }}
+    >
+      Show Alert
+    </button>
+  );
+}
+
+// ✅ Parent component holds shared counter + centered alert button
+function CounterSection() {
   const [count, setCount] = useState(0);
 
   function handleClick() {
@@ -25,10 +43,15 @@ function CounterGroup() {
   }
 
   return (
-    <div>
+    <div style={{ textAlign: 'center' }}>
       <h1>Counters that update together</h1>
-      <MyButton count={count} onClick={handleClick} />
-      <MyButton count={count} onClick={handleClick} />
+      <div>
+        <MyButton count={count} onClick={handleClick} />
+        <MyButton count={count} onClick={handleClick} />
+      </div>
+
+      {/* ✅ Centered alert button */}
+      <AlertButton />
     </div>
   );
 }
@@ -74,9 +97,8 @@ export default function App() {
         <h1>Welcome to my app</h1>
       </header>
 
-      {/* ✅ Counter section */}
-      <CounterGroup />
-
+      {/* ✅ Counter + Alert */}
+      <CounterSection />
       <AboutPage />
 
       <section style={{ marginTop: 20 }}>
