@@ -1,6 +1,6 @@
-import Profile from './Profile'
+import Profile from './Profile.jsx';
 
-function App() {
+export default function Gallery() {
   return (
     <section>
       <h1>Amazing scientists</h1>
@@ -8,7 +8,5 @@ function App() {
       <Profile />
       <Profile />
     </section>
-  )
+  );
 }
-
-export default App
