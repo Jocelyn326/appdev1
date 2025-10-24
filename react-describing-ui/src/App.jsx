@@ -1,3 +1,5 @@
+import { getImageUrl } from './utils.jsx'
+
 const person = {
   name: 'Gregorio Y. Zara',
   theme: {
@@ -6,23 +8,41 @@ const person = {
   }
 };
 
-export default function TodoList() {
+export default function Profile() {
   return (
-    <div style={person.theme}>
-      <h1>{person.name}'s Todos</h1>
-      <img
-        className="photo"
-        src="https://i.imgur.com/7vQD0fPs.jpg"
-        alt="Gregorio Y. Zara"
+    <Card>
+      <Avatar
+        size={100}
+        person={{
+          name: 'Katsuko Saruhashi',
+          imageId: 'YfeOqp2'
+        }}
       />
       <ul>
-        <li>Invent new traffic lights</li>
-        <li>Rehearse a movie scene</li>
-        <li>Improve spectrum technology</li>
         <li>Improve the videophone</li>
         <li>Prepare aeronautics lectures</li>
         <li>Work on the alcohol-fuelled engine</li>
       </ul>
+    </Card>
+  );
+}
+
+function Avatar({ person, size }) {
+  return (
+    <img
+      className="avatar"
+      src={getImageUrl(person)}
+      alt={person.name}
+      width={size}
+      height={size}
+    />
+  );
+}
+
+function Card({ children }) {
+  return (
+    <div className="card">
+      {children}
     </div>
   );
 }
