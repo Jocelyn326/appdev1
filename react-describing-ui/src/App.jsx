@@ -1,7 +1,21 @@
 import { people } from './data.jsx';
 import { getImageUrl } from './utils.jsx';
 
-export default function List() {
+function Cup({ guest }) {
+  return <h2>Tea cup for guest #{guest}</h2>;
+}
+
+export default function TeaSet() {
+  return (
+    <>
+      <Cup guest={1} />
+      <Cup guest={2} />
+      <Cup guest={3} />
+    </>
+  );
+}
+
+function List() {
   const listItems = people.map(person =>
     <li key={person.id}>
       <img
@@ -21,35 +35,5 @@ export default function List() {
       <h1>Scientists</h1>
       <ul>{listItems}</ul>
     </article>
-  );
-}
-
-function Item({ name, isPacked }) {
-  return (
-    <li className="item">
-      {name} {isPacked && '✅'}
-    </li>
-  );
-}
-
-function PackingList() {
-  return (
-    <section>
-      <h1>Sally Ride's Packing List</h1>
-      <ul>
-        <Item
-          isPacked={true}
-          name="Space suit"
-        />
-        <Item
-          isPacked={true}
-          name="Helmet with a golden leaf"
-        />
-        <Item
-          isPacked={false}
-          name="Photo of Tam"
-        />
-      </ul>
-    </section>
   );
 }
