@@ -3,6 +3,7 @@ export function getImageUrl(person, size = 's') {
     'https://i.imgur.com/' +
     person.imageId +
     size +
-    '.jpg'
+    '.jpg' +
+    's.jpg'
   );
 }
