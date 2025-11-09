@@ -1,8 +1,19 @@
-import Gallery from './Component/Gallery.jsx';
-import { Profile } from './Component/Gallery.jsx';
-
-export default function App() {
+function Profile() {
   return (
-    <Profile />
+    <img
+      src="https://i.imgur.com/MK3eW3As.jpg"
+      alt="Katherine Johnson"
+    />
+  );
+}
+
+export default function Gallery() {
+  return (
+    <section>
+      <h1>Amazing scientists</h1>
+      <Profile />
+      <Profile />
+      <Profile />
+    </section>
   );
 }
