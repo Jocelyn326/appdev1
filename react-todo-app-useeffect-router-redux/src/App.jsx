@@ -6,13 +6,13 @@ import Todos from "./pages/Todos"
 
 function App () {
   return (
-  <BrowserRouter>
+    <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/todos" element={<Todos />} />
       </Routes>
-  </BrowserRouter>
+    </BrowserRouter>
   )
 }
 
